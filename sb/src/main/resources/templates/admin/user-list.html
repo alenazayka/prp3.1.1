@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+    <title>User Management Application</title>
+</head>
+<body>
+<div style="text-align: center;">
+    <h1>User Management</h1>
+    <h2>
+        <a href="/admin/add">Add New User</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="/admin">List All Users</a>
+
+    </h2>
+</div>
+<div align="center">
+    <table border="1" cellpadding="5">
+        <caption><h2>List of Users</h2></caption>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Login</th>
+            <th>Password</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="user : ${listUser}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.age}"></td>
+            <td th:text="${user.login}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.role}"></td>
+            <td>
+                <a th:href="@{/admin/edit/{id}(id=${user.id})}">Edit</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a th:href="@{/admin/delete/{id}(id=${user.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

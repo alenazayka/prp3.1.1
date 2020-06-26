@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+<h2>Error occurred</h2>
+<p><span th:text="${errorText}"></span></p>
+<br>
+<br>
+<div>
+    <button onclick="location.href='/admin'">  Go back  </button>
+</div>
+<br>
+<br>
+<div>    <!-- buttons holder -->
+    <button onclick="location.href='/logout'"> Logout </button>
+</div>
+</body>
+</html>
