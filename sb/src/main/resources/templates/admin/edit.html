@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<h3> Update Student</h3>
+<h3> Update User</h3>
 <form action="#" th:action="@{/admin/update/{id}(id=${user.id})}" th:object="${user}" method="post">
     <label for="name" class="col-form-label">Name</label> <input type="text" th:field="*{name}" class="form-control"
                                                                  id="name" placeholder="Name"> <span
